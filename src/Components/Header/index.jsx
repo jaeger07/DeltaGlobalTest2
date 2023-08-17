@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Logo, NavBar, ButtonDarkSwitch, MenuPerfil } from './styles'
+import { Menu, Logo, NavBar, ButtonThemeSwitch, MenuPerfil } from './styles'
 import logoLight from '../../Assets/Logo/logoLight.png';
 //import logoDark from '../../Assets/Logo/logoDark.png';
 import buttonLightSwitch from '../../Assets/Button/buttonLightSwitch.png';
@@ -14,7 +14,7 @@ export default function Header() {
     <Menu>
       <Logo src={logoLight}></Logo>
       <NavBar>
-      <ButtonDarkSwitch src={buttonLightSwitch}/>
+      <ButtonThemeSwitch src={buttonLightSwitch}/>
       <MenuPerfil src={menuPerfilLight}/>
       </NavBar>
     </Menu>
