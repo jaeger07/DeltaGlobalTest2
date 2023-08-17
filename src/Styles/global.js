@@ -12,8 +12,7 @@ export const GlobalStyled = createGlobalStyle`
         background-color: var(white, #FFF);
    }
    body, input, textarea, button, a, span {
-      font-family: 'poppins', sans-serif;
-      font-weight: 600;
+      font-family: 'Inter', sans-serif;
       text-decoration: none;
       border:none;
    }
