@@ -1,8 +1,6 @@
 import React from 'react';
 import { 
-    Container, 
-    TasksToDo, 
-    TittleTasksToDo, 
+    Container,  
     TasksComplete,
     TittleTasksComplete, 
     Cards, 
@@ -15,28 +13,14 @@ import {
     ButtonDeleteTask 
 } from './styles';
 import Scores from "./Scores";
-import ButtonAddTask from './ButtonAddTask';
+import{ MyTasks} from './MyTasks';
 
 export default function Tasks() {
     return ( 
         <Container>
             <Scores/>
-            <ButtonAddTask/>
 
-            <TasksToDo>
-                <TittleTasksToDo>Suas Tarefas:</TittleTasksToDo>
-                <Cards>
-                    <TasksToDoCard>
-                        <ButtonCheck/>
-                        <TaskContainer>
-                            <TittleTask>Tarefa 1</TittleTask>
-                            <DescriptionTask>Lorem Ipsum that lorem.</DescriptionTask>
-                        </TaskContainer>
-                        <ButtonEditTask/>
-                        <ButtonDeleteTask/>
-                    </TasksToDoCard>
-                </Cards>
-            </TasksToDo>
+            <MyTasks/>
 
             <TasksComplete>
                 <TittleTasksComplete>Concluídas:</TittleTasksComplete>
@@ -51,7 +35,7 @@ export default function Tasks() {
                         <ButtonEditTask/>
                         <ButtonDeleteTask/>
                     </TasksToDoCard>
-                    
+
                 </Cards>
             </TasksComplete>
 
