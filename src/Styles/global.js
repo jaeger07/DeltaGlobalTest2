@@ -15,6 +15,7 @@ export const GlobalStyled = createGlobalStyle`
       font-family: 'Inter', sans-serif;
       text-decoration: none;
       border:none;
+      outline: none;
    }
 
    button, select, a {

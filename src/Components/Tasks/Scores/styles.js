@@ -5,6 +5,7 @@ export const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   margin-top: 50px;
+  margin-bottom: 35px;
 `;
 export const Card = styled.div`
   display: flex;
