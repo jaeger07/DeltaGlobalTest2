@@ -22,7 +22,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <Header toggleTheme={toggleTheme} />
-      <Tasks/>
+      <Tasks theme={theme} />
       <GlobalStyled/>
     </ThemeProvider>
   );

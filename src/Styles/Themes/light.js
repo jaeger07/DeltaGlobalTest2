@@ -6,8 +6,8 @@ export default {
 
         bg: '#FFFFFF',
 
-        bgSwitch: '#FFFFFF',
-        buttonSwitch: '#343434',
+        bgSwitch: '#F2F2F2',
+        buttonSwitch: '#FEFEFE',
         borderHeader: '#F2F2F2',
 
         bgDivCount: '#F2F2F2',
