@@ -1,6 +1,13 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyled = createGlobalStyle`
+
+   body {
+
+      background: ${props => props.theme.colors.bg};
+      color: ${props => props.theme.colors.textTaskTittle}
+   }
+
    *{
         margin: 0;
         padding: 0;
@@ -9,7 +16,6 @@ export const GlobalStyled = createGlobalStyle`
    body, #root, html {
         margin: 0;
         padding: 0;
-        background-color: var(white, #FFF);
    }
    body, input, textarea, button, a, span {
       font-family: 'Inter', sans-serif;

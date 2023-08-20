@@ -7,7 +7,7 @@ export const Menu = styled.header`
   padding: 0 5vw;
   width: 100vw;
   height: 68px;
-  border-bottom: 1px solid #F2F2F2;
+  border-bottom: 1px solid ${props => props.theme.colors.borderHeader};
 `;
 export const NavBar = styled.div`
   display: flex;
@@ -28,5 +28,6 @@ export const ButtonThemeSwitch = styled.img`
 `;
 export const MenuPerfil = styled.img`
   max-width: 80px;
+  margin-left: 30px;
   height: auto;
 `;

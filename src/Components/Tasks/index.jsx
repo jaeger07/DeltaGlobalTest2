@@ -7,11 +7,7 @@ export default function Tasks() {
     return ( 
         <Container>
             <Scores/>
-
             <MyTasks/>
-
-            
-
         </Container>
      );
 };

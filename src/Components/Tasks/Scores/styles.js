@@ -13,7 +13,7 @@ export const Card = styled.div`
   margin: 0;
   padding: 15px 50px;
   width: 32%;
-  background-color: #F2F2F2;
+  background-color: ${props => props.theme.colors.bgDivCount};
   border-radius: 8px;
   h1{
     color: #2D9CDB;
@@ -21,7 +21,7 @@ export const Card = styled.div`
     font-size: 32px;
   }
   span{
-    color: #828282;
+    color: ${props => props.theme.colors.textPCount};
     font-size: 16px;
     text-align: center;
   }

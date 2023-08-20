@@ -65,12 +65,7 @@ export class MyTasks extends Component{
   }
   
   reloadTasks = () => {
-      fetch('http://localhost:3030/tasks/')
-      .then(res => res.json())
-      .then(data => this.setState({ tasks: data }));
-  }
-  reloadTasksCompleted = () => {
-      fetch('http://localhost:3030/taskscompleted/')
+      fetch('http://localhost:3030/tasks')
       .then(res => res.json())
       .then(data => this.setState({ tasks: data }));
   }
@@ -87,7 +82,7 @@ export class MyTasks extends Component{
   }
       
   createTask = (task) => {
-    fetch("http://localhost:3030/tasks/", { method: 'POST' ,
+    fetch("http://localhost:3030/tasks", { method: 'POST' ,
       headers : {'Content-Type':'application/json'},
       body: JSON.stringify(task)      
     }).then((res) => {

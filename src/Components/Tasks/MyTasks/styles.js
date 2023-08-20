@@ -26,7 +26,7 @@ export const TasksToDoCard = styled.div`
     align-items: center;
     width: 100%;
     height: 75px;
-    background-color: #F2F2F2;
+    background-color: ${props => props.theme.colors.bgDiv};
     border-radius: 8px;
     margin-bottom: 8px;
     padding: 20px 25px ;
@@ -34,7 +34,7 @@ export const TasksToDoCard = styled.div`
 
 export const ButtonCheck = styled.button`
     border-radius: 50%;
-    border: 2px solid #BDBDBD;
+    border: 2px solid ${props => props.theme.colors.buttonCheck};
     padding: 10px;
     
     &:hover{
@@ -50,29 +50,29 @@ export const TaskContainer = styled.div`
 export const TittleTask = styled.h2`
     font-size: 18px;
     font-weight: 700;
-    color: #1D1D1D;
+    color: ${props => props.theme.colors.textTaskTittle};
 `;
 export const DescriptionTask = styled.p`
     font-size: 12px;
     font-weight: 400;
-    color: #828282;
+    color: ${props => props.theme.colors.textTaskDescription};
 `; 
 export const ButtonHandleTask = styled.img`
 padding: 10px;
 border-radius: 50%;
 &:hover{
-    background-color: #E0E0E0;
+    background-color: ${props => props.theme.colors.bgButton};
     }
 `;
 
 export const ButtonAddTask = styled.button`
     display: flex;
     align-items: center;
-    background-color: #2D9CDB;
+    background-color: ${props => props.theme.colors.bgButtonBlue};
     padding: 16px 24px;
     max-width: 200px;
     border-radius: 8px;
-    color: #FFFFFF;
+    color: ${props => props.theme.colors.textButtonBlue};
     font-size: 14px;
     font-weight: 700;
     letter-spacing: 1px;
@@ -116,7 +116,7 @@ export const ModalExit = styled.div`
     z-index: 1;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(30,30,30,0.4);
+    background-color: ${props => props.theme.colors.bgOpacityModal};
 `;
 
 export const ModalForm = styled.form`
@@ -124,7 +124,7 @@ export const ModalForm = styled.form`
     flex-direction: column;
     z-index: 2;
     width: 500px;
-    background-color: #FFFFFF;
+    background-color: ${props => props.theme.colors.bgModal};
     border-radius: 8px;
 `;
 
@@ -137,7 +137,7 @@ export const ModalButtonClose = styled.img`
     border-radius: 50%;
     cursor: pointer;
     &:hover{
-        background-color: #f2f2f2;
+        background-color: ${props => props.theme.colors.bgButton};
     }
 `;
 
@@ -148,12 +148,12 @@ export const ModalFormContainer = styled.div`
 `;
 export const ModalTittle = styled.h1`
     margin-bottom: 30px;
-    color: #343434;
+    color: ${props => props.theme.colors.textTittleModal};
     font-size: 18px;
     font-weight: 700;
 `;
 export const ModalLabel = styled.label`
-    color: #828282;
+    color: ${props => props.theme.colors.textLabelModal};
     font-size: 14px;
     font-weight: 400px;
     line-height: 28px;
@@ -165,7 +165,7 @@ export const ModalInput = styled.input`
     margin-bottom: 25px;
     padding-left: 10px;
     font-size: 18px;
-    background-color: #F2F2F2;
+    background-color: ${props => props.theme.colors.inputTask};
     border-radius: 8px;
 `;
 export const ModalTextArea = styled.textarea`
@@ -173,7 +173,7 @@ export const ModalTextArea = styled.textarea`
     height: 68px;
     margin-bottom: 30px;
     padding: 10px;
-    background-color: #F2F2F2;
+    background-color: ${props => props.theme.colors.inputTask};
     border-radius: 8px;
     resize: none;
     &::-webkit-scrollbar {
@@ -196,8 +196,9 @@ export const ModalButtonDelete = styled.button`
 
 export const ModalButtonCancel = styled.button`
     padding: 16px 24px;
-    border: 2px solid #1D1D1D;
-    background-color: #FFF;
+    border: 2px solid ${props => props.theme.colors.borderButtonCancel};
+    background-color:${props => props.theme.colors.bgModal};
+    color: ${props => props.theme.colors.textButtonCancel};
     border-radius: 8px;
     font-size: 14px;
     font-weight: 800;
