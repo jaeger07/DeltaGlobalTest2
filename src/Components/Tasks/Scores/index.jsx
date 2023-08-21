@@ -8,13 +8,14 @@ export default function Scores({tasks}) {
     function tasksCompleted(tasks) {
         var counter = 0;
         for (const task of tasks) {
-          if (task.completed == true) counter += 1;
+          if (task.completed === true) counter += 1;
         }
         return counter;
       }
     function tasksTotal(tasks) {
         var counter = 0;
-        for (const task of tasks) {
+        for( const task of tasks) {
+          if (task != null)
            counter += 1;
         }
         return counter;

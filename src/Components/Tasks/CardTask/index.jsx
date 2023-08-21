@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext }  from 'react'
+import { ThemeContext } from 'styled-components';
 
 import {   
     TasksToDoCard,
@@ -16,6 +17,7 @@ import {
 
 const CardTask = ({task, editTask, deleteTask, completeTask, }) => {
 
+  const { tittle } = useContext(ThemeContext);  
   
   return (
     
@@ -25,8 +27,8 @@ const CardTask = ({task, editTask, deleteTask, completeTask, }) => {
         <TittleTask>{task.tittle}</TittleTask>
         <DescriptionTask>{task.description}</DescriptionTask>
     </TaskContainer>
-    <ButtonHandleTask onClick={() => editTask(task.id)} src={"light" === 'light' ? buttonEditLight : buttonEditDark}/>
-    <ButtonHandleTask onClick={() => deleteTask(task.id)} src={"light" === 'light' ? buttonDeleteLight : buttonDeleteDark}/>
+    <ButtonHandleTask onClick={() => editTask(task.id)} src={tittle === 'light' ? buttonEditLight : buttonEditDark}/>
+    <ButtonHandleTask onClick={() => deleteTask(task.id)} src={tittle === 'light' ? buttonDeleteLight : buttonDeleteDark}/>
     </TasksToDoCard>
     
   )
