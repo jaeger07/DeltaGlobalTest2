@@ -41,13 +41,13 @@ import {
 
 
         reloadTasks = () => {
-            fetch('http://localhost:3030/tasks')
+            fetch('https://json-server-theta-ruby.vercel.app/tasks')
             .then(res => res.json())
             .then(data => this.setState({ tasks: data }));
         }
       
         loadTask = (id) => {
-          fetch('http://localhost:3030/tasks/' + id)
+          fetch('https://json-server-theta-ruby.vercel.app/tasks/' + id)
             .then(res => res.json())
             .then(data => this.setState(
             {
@@ -58,11 +58,11 @@ import {
         }
             
         createTask = (task) => {
-          fetch("http://localhost:3030/tasks", { method: 'POST' ,
+          fetch("https://json-server-theta-ruby.vercel.app/tasks", { method: 'POST' ,
             headers : {'Content-Type':'application/json'},
             body: JSON.stringify(task)      
           }).then((res) => {
-            if(res.ok){
+            if(res){
               this.reloadTasks();
               this.fecharModal();
             } else {
@@ -72,11 +72,11 @@ import {
         }
       
         updateTask = (task) => {
-          fetch("http://localhost:3030/tasks/"+ task.id, { method: 'PUT' ,
+          fetch("https://json-server-theta-ruby.vercel.app/tasks/"+ task.id, { method: 'PUT' ,
               headers : {'Content-Type':'application/json'},
               body: JSON.stringify(task)      
           }).then((res) => {
-              if(res.ok){
+              if(res){
                   this.reloadTasks();
                   this.fecharModal();
               }else{
@@ -87,16 +87,16 @@ import {
         }
       
         deleteTask = (id) => {
-            fetch("http://localhost:3030/tasks/"+id, { method: 'DELETE'})
+            fetch("https://json-server-theta-ruby.vercel.app/tasks/"+id, { method: 'DELETE'})
             .then(res => {
-                if(res.ok){
+                if(res){
                     this.reloadTasks();
                 }
             }
             )
         }
         editMyTasks = (id) => {
-            fetch("http://localhost:3030/tasks/"+id, { method: 'GET'})
+            fetch("https://json-server-theta-ruby.vercel.app/tasks/"+id, { method: 'GET'})
             .then(res => res.json())
             .then(tasks => {this.setState({ 
                 id: tasks.id,
@@ -160,7 +160,7 @@ import {
         completeTask = (task) => {
           const Task = { completed: !task.completed };
 
-          fetch("http://localhost:3030/tasks/"+ task.id, { method: 'PATCH' ,
+          fetch("https://json-server-theta-ruby.vercel.app/tasks/"+ task.id, { method: 'PATCH' ,
           headers : {'Content-Type':'application/json'},
           body: JSON.stringify(Task)      
       }).then((res) => {
