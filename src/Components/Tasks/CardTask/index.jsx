@@ -25,8 +25,8 @@ const CardTask = ({task, editTask, deleteTask, completeTask, }) => {
         <TittleTask>{task.tittle}</TittleTask>
         <DescriptionTask>{task.description}</DescriptionTask>
     </TaskContainer>
-    <ButtonHandleTask onClick={() => editTask(task.id)} src={task === 'light' ? buttonEditLight : buttonEditDark}/>
-    <ButtonHandleTask onClick={() => deleteTask(task.id)} src={task === 'light' ? buttonDeleteLight : buttonDeleteDark}/>
+    <ButtonHandleTask onClick={() => editTask(task.id)} src={"light" === 'light' ? buttonEditLight : buttonEditDark}/>
+    <ButtonHandleTask onClick={() => deleteTask(task.id)} src={"light" === 'light' ? buttonDeleteLight : buttonDeleteDark}/>
     </TasksToDoCard>
     
   )

@@ -149,7 +149,7 @@ import {
             description: this.state.description,
             completed: false
           };
-          if(this.state.id == 0){
+          if(this.state.id === 0){
                     this.createTask(task);
             }else{
                     this.updateTask(task);
