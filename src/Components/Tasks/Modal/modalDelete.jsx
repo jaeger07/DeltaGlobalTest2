@@ -27,7 +27,7 @@ const ModalDelete = ({ fecharModal , deleteTask }) => {
               
               <ModalButtonClose src={buttonClose} onClick={fecharModal}/>
               <ModalFormContainer>
-                <ModalTittle>Cadastrar Tarefa</ModalTittle>
+                <ModalTittle>Excluir Tarefa</ModalTittle>
 
                 <ModalTextAlertDelete>
                     Tem certeza que deseja deletar essa tarefa?  
