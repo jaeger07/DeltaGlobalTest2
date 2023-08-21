@@ -26,6 +26,7 @@ export const light =  {
 
         textTittleModal: '#343434',
         textLabelModal: '#828282',
+        inputTextTask: '#1D1D1D',
         inputTask: '#F2F2F2',
         bgOpacityModal: 'rgba(30,30,30,0.4)',
         bgModal: '#FFFFFF',

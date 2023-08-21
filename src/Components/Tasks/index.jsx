@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Scores from "./Scores";
 import Modal from './Modal';
 import CardTask from './CardTask';
+import CardTaskComplete from './CardTaskComplete';
 
 import {  
     Container,
@@ -214,7 +215,7 @@ render(){
                 <TittleTasksToDo>Concluídas:</TittleTasksToDo>
 
                 {this.state.tasks.filter(task => task.completed === true ? task : null ).map((task) =>
-                    <CardTask 
+                    <CardTaskComplete 
                     key={task.id}  
                     task={task} 
                     editTask={this.abrirModalAtualizar} 

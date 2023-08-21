@@ -95,6 +95,7 @@ export const ModalInput = styled.input`
     margin-bottom: 25px;
     padding-left: 10px;
     font-size: 18px;
+    color: ${props => props.theme.colors.inputTextTask};
     background-color: ${props => props.theme.colors.inputTask};
     border-radius: 8px;
 `;

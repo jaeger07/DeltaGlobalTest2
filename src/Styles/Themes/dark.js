@@ -25,6 +25,7 @@ export const dark =  {
 
         textTittleModal: '#F2F2F2',
         textLabelModal: '#BDBDBD',
+        inputTextTask: '#FFFFFF',
         inputTask: '#343434',
         bgOpacityModal: 'rgba(10,10,10,0.8)', 
         bgModal: '#1D1D1D',
