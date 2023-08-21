@@ -20,7 +20,7 @@ import {
    import buttonClose from "../../../Assets/Button/buttonClose.svg"
    import plus from "../../../Assets/Button/plus.svg"
 
-const Modal = ({submitTask, fecharModal, tittle, setTittle, description, setDescription }) => {
+const Modal = ({ tittleModal, textButton, submitTask, fecharModal, tittle, setTittle, description, setDescription }) => {
   
   return (
     
@@ -29,7 +29,7 @@ const Modal = ({submitTask, fecharModal, tittle, setTittle, description, setDesc
               
               <ModalButtonClose src={buttonClose} onClick={fecharModal}/>
               <ModalFormContainer>
-                <ModalTittle>Cadastrar Tarefa</ModalTittle>
+                <ModalTittle>{tittleModal}</ModalTittle>
                 <ModalLabel>Nome da tarefa:</ModalLabel>
                 <ModalInput type="text" value={tittle} onChange={setTittle}/>
                 <ModalLabel>Descrição da tarefa:</ModalLabel>
@@ -45,7 +45,7 @@ const Modal = ({submitTask, fecharModal, tittle, setTittle, description, setDesc
                   </ModalButtonCancel>
       
                   <ButtonAddTask  type="submit" >
-                    <IconPlus src={plus}/> Adicionar Tarefa
+                    <IconPlus src={plus}/> {textButton}
                   </ButtonAddTask>
                 </ModalContainerButton>
               </ModalFormContainer>

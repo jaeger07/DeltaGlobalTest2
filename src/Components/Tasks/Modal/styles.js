@@ -3,32 +3,6 @@ import styled from 'styled-components'
 
 
 
-
-
-export const ButtonAddTask = styled.button`
-    display: flex;
-    align-items: center;
-    background-color: ${props => props.theme.colors.bgButtonBlue};
-    padding: 16px 24px;
-    max-width: 200px;
-    border-radius: 8px;
-    color: ${props => props.theme.colors.textButtonBlue};
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 1px;
-`;
-export const IconPlus = styled.img`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20px;
-    width: 20px;
-`;
-
-
-
-
-
 export const ModalContainer = styled.div`
     position: fixed ;
     right: 0;
@@ -104,6 +78,7 @@ export const ModalTextArea = styled.textarea`
     height: 68px;
     margin-bottom: 30px;
     padding: 10px;
+    color: ${props => props.theme.colors.inputTextTask};
     background-color: ${props => props.theme.colors.inputTask};
     border-radius: 8px;
     resize: none;
@@ -116,13 +91,40 @@ export const ModalTextArea = styled.textarea`
         border-radius: 8px;
     }
 `;
+export const ModalTextAlertDelete = styled.p`
+    color: ${props => props.theme.colors.modalTextAlertDelete};
+    margin-bottom: 45px;
+`;
 export const ModalContainerButton = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 45px;
 `;
-export const ModalButtonDelete = styled.button`
 
+export const ButtonAddTask = styled.button`
+    display: flex;
+    align-items: center;
+    background-color: ${props => props.theme.colors.bgButtonBlue};
+    padding: 16px 24px;
+    max-width: 200px;
+    border-radius: 8px;
+    color: ${props => props.theme.colors.textButtonBlue};
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 1px;
+`;
+
+export const ButtonDeleteTask = styled.button`
+    display: flex;
+    align-items: center;
+    background-color: #EB5757;
+    color: ${props => props.theme.colors.textButtonRed};
+    padding: 16px 24px;
+    max-width: 200px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
 `;
 
 export const ModalButtonCancel = styled.button`
@@ -133,4 +135,22 @@ export const ModalButtonCancel = styled.button`
     border-radius: 8px;
     font-size: 14px;
     font-weight: 800;
+`;
+
+
+
+
+export const IconPlus = styled.img`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
+`;
+export const IconDelete = styled.img`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
+    width: 20px;
 `;

@@ -34,6 +34,7 @@ export const light =  {
         bgButtonBlue:'#2D9CDB',
         textButtonBlue: '#FFFFFF',
         
+        modalTextAlertDelete: '#828282',
         bgButtonRed:'#EB5757',
         textButtonRed: '#FFFFFF',
 

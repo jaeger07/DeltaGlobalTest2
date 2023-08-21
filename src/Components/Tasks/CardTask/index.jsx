@@ -15,7 +15,7 @@ import {
     import buttonEditDark from "../../../Assets/Button/buttonEditDark.svg"
     import buttonDeleteDark from "../../../Assets/Button/buttonDeleteDark.svg"
 
-const CardTask = ({task, editTask, deleteTask, completeTask, }) => {
+const CardTask = ({task, editTask, deleteTask, completeTask }) => {
 
   const { tittle } = useContext(ThemeContext);  
   

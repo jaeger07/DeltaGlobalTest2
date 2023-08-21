@@ -33,6 +33,7 @@ export const dark =  {
         bgButtonBlue:'#2D9CDB',
         textButtonBlue: '#FFFFFF',
         
+        modalTextAlertDelete: '#BDBDBD',
         bgButtonRed:'#EB5757',
         textButtonRed: '#FFFFFF',
 

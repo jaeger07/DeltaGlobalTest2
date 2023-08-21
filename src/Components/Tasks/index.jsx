@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Scores from "./Scores";
 import Modal from './Modal';
+import ModalDelete from './Modal/modalDelete';
 import CardTask from './CardTask';
 import CardTaskComplete from './CardTaskComplete';
 
@@ -28,7 +29,9 @@ import {
             description: '',
             completed: false,
             tasks : [],
-            modalAberta: false      
+            modalAberta: false,
+            modalEdit: false,
+            modalDelete:false,     
           };
       
          
@@ -126,7 +129,15 @@ import {
         abrirModalAtualizar = (id) => {
           this.setState({
             id: id,
-            modalAberta: true
+            modalEdit: true
+          });
+      
+          this.loadTask(id);
+        }
+        openModalDelete = (id) => {
+          this.setState({
+            id: id,
+            modalDelete: true
           });
       
           this.loadTask(id);
@@ -137,7 +148,23 @@ import {
             id: 0,
             tittle: "",
             description: "",
-            modalAberta: false
+            modal: false
+          })
+        }
+        fecharModalEdit = () => {
+          this.setState({
+            id: 0,
+            tittle: "",
+            description: "",
+            modalEdit: false
+          })
+        }
+        fecharModalDelete = () => {
+          this.setState({
+            id: 0,
+            tittle: "",
+            description: "",
+            modalDelete: false
           })
         }
         
@@ -157,33 +184,57 @@ import {
         }
 
 
-        completeTask = (task) => {
-          const Task = { completed: !task.completed };
+    completeTask = (task) => {
+      const Task = { completed: !task.completed };
 
-          fetch("https://json-server-theta-ruby.vercel.app/tasks/"+ task.id, { method: 'PATCH' ,
-          headers : {'Content-Type':'application/json'},
-          body: JSON.stringify(Task)      
+      fetch("https://json-server-theta-ruby.vercel.app/tasks/"+ task.id, { method: 'PATCH' ,
+      headers : {'Content-Type':'application/json'},
+      body: JSON.stringify(Task)      
       }).then((res) => {
-              this.reloadTasks();
-        })
+          this.reloadTasks();
+      })
     }
 
       
 
-        renderModal = () => {
-          if(this.state.modalAberta){
+      renderModal = () => {
+        if(this.state.modalAberta){
           return (
-
             <Modal 
+            tittleModal="Cadastrar Tarefa"
+            textButton="Adicionar tarefa"
             submitTask={this.submitTask} 
             fecharModal={this.fecharModal}
             tittle={this.state.tittle}
             setTittle={this.updateSetStateTittle}
             description={this.state.description}
             setDescription={this.updateSetStateDescription}
-            />
-            );
-        }}
+            />);
+        }
+        if(this.state.modalEdit){
+          return (
+          <Modal 
+          tittleModal="Editar Tarefa"
+          textButton="Salvar"
+          submitTask={this.submitTask} 
+          fecharModal={this.fecharModalEdit}
+          tittle={this.state.tittle}
+          setTittle={this.updateSetStateTittle}
+          description={this.state.description}
+          setDescription={this.updateSetStateDescription}
+          />);
+        }
+      }
+
+  renderModalDelete = () => {
+    if(this.state.modalDelete){
+      return (
+        <ModalDelete
+        deleteTask={this.deleteTask}
+        fecharModal={this.fecharModalDelete}
+        />);
+    }
+  }
         
 
 render(){
@@ -204,7 +255,7 @@ render(){
                         key={task.id} 
                         task={task} 
                         editTask={this.abrirModalAtualizar} 
-                        deleteTask={this.deleteTask}
+                        deleteTask={this.openModalDelete}
                         completeTask={this.completeTask}
                         />
                     
@@ -219,7 +270,7 @@ render(){
                     key={task.id}  
                     task={task} 
                     editTask={this.abrirModalAtualizar} 
-                    deleteTask={this.deleteTask}
+                    deleteTask={this.openModalDelete}
                     completeTask={this.completeTask}
                     />
                 )}
@@ -227,6 +278,7 @@ render(){
                 </TasksComplete>
 
                 {this.renderModal()}
+                {this.renderModalDelete()}
 
                 </ContainerTasks>
         </Container>
