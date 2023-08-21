@@ -1,4 +1,8 @@
 {
+<<<<<<< HEAD
+  "tasks": [],
+  "taskscompleted": []
+=======
   "tasks": [
     {
       "id": 1,
@@ -14,4 +18,5 @@
       "description": ""
     }
   ]
+>>>>>>> 51c0776d5eb70bfde074231535cc0a2c746d7d50
 }

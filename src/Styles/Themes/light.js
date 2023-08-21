@@ -6,8 +6,8 @@ export default {
 
         bg: '#FFFFFF',
 
-        bgSwitch: '#FFFFFF',
-        buttonSwitch: '#343434',
+        bgSwitch: '#F2F2F2',
+        buttonSwitch: '#FEFEFE',
         borderHeader: '#F2F2F2',
 
         bgDivCount: '#F2F2F2',
@@ -34,7 +34,7 @@ export default {
         textButtonBlue: '#FFFFFF',
         
         bgButtonRed:'#EB5757',
-        textButtonBlue: '#FFFFFF',
+        textButtonRed: '#FFFFFF',
 
         borderButtonCancel: '#1D1D1D',
         textButtonCancel: '#1D1D1D',
