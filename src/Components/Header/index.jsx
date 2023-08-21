@@ -5,8 +5,6 @@ import { ThemeContext } from 'styled-components';
 import { Menu, Logo, NavBar, MenuPerfil } from './styles'
 import logoLight from '../../Assets/Logo/logoLight.png';
 import logoDark from '../../Assets/Logo/logoDark.svg';
-// import buttonSwitchLight from '../../Assets/Button/buttonSwitchLight.svg';
-// import buttonSwitchDark from '../../Assets/Button/buttonSwitchDark.svg';
 import menuPerfilLight from '../../Assets/MenuPerfil/menuPerfilLight.png';
 
 
