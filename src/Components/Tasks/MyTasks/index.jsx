@@ -45,20 +45,11 @@ export class MyTasks extends Component{
       tittle: '',
       description: '',
       tasks : [],
-      taskscompleted : [],
       modalAberta: false      
     };
 
-    this.reloadTasks = this.reloadTasks.bind(this);
-    this.loadTask = this.loadTask.bind(this);
-    this.createTask = this.createTask.bind(this);
-    this.updateTask = this.updateTask.bind(this);
-    this.deleteTask = this.deleteTask.bind(this);
-    this.abrirModalInserir = this.abrirModalInserir.bind(this);
-    this.fecharModal = this.fecharModal.bind(this);
-    this.updateSetStateTittle = this.updateSetStateTittle.bind(this);
-    this.updateSetStateDescription = this.updateSetStateDescription.bind(this);
-            
+   
+    
   }
   componentDidMount() {
     this.reloadTasks();
@@ -68,6 +59,7 @@ export class MyTasks extends Component{
       fetch('http://localhost:3030/tasks')
       .then(res => res.json())
       .then(data => this.setState({ tasks: data }));
+      console.log(this.tasksCompleted)
   }
 
   loadTask = (id) => {
@@ -159,17 +151,19 @@ export class MyTasks extends Component{
   fecharModal = () => {
     this.setState({
       id: 0,
-      nome: "",
-      email: "",
+      tittle: "",
+      description: "",
       modalAberta: false
     })
   }
   
-  submitTask = () => {
+  submitTask = (e) => {
+    e.preventDefault();
     const task = {
       id: this.state.id,
       tittle: this.state.tittle,
-      description: this.state.description
+      description: this.state.description,
+      completed: false
     };
     if(this.state.id == 0){
               this.createTask(task);
@@ -179,14 +173,12 @@ export class MyTasks extends Component{
   }
 
 
-    
-
   renderModal = () => {
     if(this.state.modalAberta){
     return (
 
       <ModalContainer>
-      <ModalForm id="modalForm">
+      <ModalForm onSubmit={this.submitTask} >
         
         <ModalButtonClose src={buttonClose} onClick={this.fecharModal}/>
         <ModalFormContainer>
@@ -205,7 +197,7 @@ export class MyTasks extends Component{
                 onClick={this.fecharModal}>Cancelar
             </ModalButtonCancel>
 
-            <ButtonAddTask form="modalForm" type="submit" onClick={this.submitTask}>
+            <ButtonAddTask  type="submit" >
               <IconPlus src={plus}/> Adicionar Tarefa
             </ButtonAddTask>
           </ModalContainerButton>
@@ -248,7 +240,7 @@ render() {
 
     <TasksComplete>
       <TittleTasksToDo>Concluídas:</TittleTasksToDo>
-      {this.state.tasks.map((task) =>
+      {this.state.tasks.filter(task => task.completed === true ? task : null ).map((task) =>
           <Cards>
             <TasksToDoCard>
               <ButtonCheck />
