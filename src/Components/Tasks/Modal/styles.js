@@ -30,7 +30,7 @@ export const IconPlus = styled.img`
 
 
 export const ModalContainer = styled.div`
-    position: absolute;
+    position: fixed ;
     right: 0;
     top: 0;
     width: 100vw;
