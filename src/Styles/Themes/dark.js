@@ -26,7 +26,7 @@ export default {
         textTittleModal: '#F2F2F2',
         textLabelModal: '#BDBDBD',
         inputTask: '#343434',
-        bgOpacityModal: 'rgba(10,10,10,0.8)', ///
+        bgOpacityModal: 'rgba(10,10,10,0.8)', 
         bgModal: '#1D1D1D',
 
         bgButtonBlue:'#2D9CDB',

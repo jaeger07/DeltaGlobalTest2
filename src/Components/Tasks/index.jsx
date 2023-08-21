@@ -17,7 +17,7 @@ import {
    import plus from "../../Assets/Button/plus.svg"
 
 
-    export default class Tasks extends Component{
+    export default class Tasks extends Component {
 
         constructor(props){
           super(props);
@@ -158,7 +158,7 @@ import {
 
 
         completeTask = (task) => {
-          const Task = { completed: !task.completed};
+          const Task = { completed: !task.completed };
 
           fetch("http://localhost:3030/tasks/"+ task.id, { method: 'PATCH' ,
           headers : {'Content-Type':'application/json'},
