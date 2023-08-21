@@ -5,7 +5,6 @@ import check from '../../Assets/Button/check.svg'
  export const Container = styled.div`
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     margin: 0 auto;
     padding: 0 5vw;
     max-width: 900px;
@@ -84,6 +83,7 @@ export const ButtonAddTask = styled.button`
     background-color: ${props => props.theme.colors.bgButtonBlue};
     padding: 16px 24px;
     max-width: 200px;
+    margin-left: calc(100% - 200px);
     border-radius: 8px;
     color: ${props => props.theme.colors.textButtonBlue};
     font-size: 14px;

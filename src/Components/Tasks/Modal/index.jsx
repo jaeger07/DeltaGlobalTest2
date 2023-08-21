@@ -20,54 +20,40 @@ import {
    import buttonClose from "../../../Assets/Button/buttonClose.svg"
    import plus from "../../../Assets/Button/plus.svg"
 
-const Modal = ({ addTask }) => {
-
-  const [tittle, setTittle] = useState("");
-  const [description, setDescription] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if(!tittle) return;
-    addTask(tittle, description);
-    setTittle("");
-    setDescription("");
-  }
+const Modal = ({submitTask, fecharModal, tittle, setTittle, description, setDescription }) => {
+  
   return (
     
     <ModalContainer>
-    <ModalForm onSubmit={handleSubmit} >
+            <ModalForm onSubmit={submitTask} >
+              
+              <ModalButtonClose src={buttonClose} onClick={fecharModal}/>
+              <ModalFormContainer>
+                <ModalTittle>Cadastrar Tarefa</ModalTittle>
+                <ModalLabel>Nome da tarefa:</ModalLabel>
+                <ModalInput type="text" value={tittle} onChange={setTittle}/>
+                <ModalLabel>Descrição da tarefa:</ModalLabel>
+                <ModalTextArea 
+                  name="description" 
+                  value={description}
+                  onChange={setDescription} 
+                ></ModalTextArea>     
       
-      <ModalButtonClose src={buttonClose} onClick={() => {}}/>
-      <ModalFormContainer>
-        <ModalTittle>Adicionar Tarefa</ModalTittle>
-        <ModalLabel>Nome da tarefa:</ModalLabel>
-        <ModalInput 
-        type="text" 
-        tittle= {tittle}
-        value={tittle}
-        onChange={(e) => setTittle(e.target.value)} />
-        <ModalLabel>Descrição da tarefa:</ModalLabel>
-        <ModalTextArea 
-          name="description" 
-          description= {description}
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        ></ModalTextArea>     
-
-        <ModalContainerButton>
-          <ModalButtonCancel
-              onClick={() => {}}>Cancelar
-          </ModalButtonCancel>
-
-          <ButtonAddTask type="submit" >
-            <IconPlus src={plus}/>Adicionar Tarefa
-          </ButtonAddTask>
-        </ModalContainerButton>
-      </ModalFormContainer>
-    </ModalForm>
-    <ModalExit onClick={() => {}}/>
-
-  </ModalContainer>
+                <ModalContainerButton>
+                  <ModalButtonCancel
+                      onClick={fecharModal}>Cancelar
+                  </ModalButtonCancel>
+      
+                  <ButtonAddTask  type="submit" >
+                    <IconPlus src={plus}/> Adicionar Tarefa
+                  </ButtonAddTask>
+                </ModalContainerButton>
+              </ModalFormContainer>
+            </ModalForm>
+            <ModalExit onClick={fecharModal}/>
+      
+          </ModalContainer>
+          
   )
 }
 

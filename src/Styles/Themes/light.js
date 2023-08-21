@@ -34,7 +34,7 @@ export default {
         textButtonBlue: '#FFFFFF',
         
         bgButtonRed:'#EB5757',
-        textButtonBlue: '#FFFFFF',
+        textButtonRed: '#FFFFFF',
 
         borderButtonCancel: '#1D1D1D',
         textButtonCancel: '#1D1D1D',

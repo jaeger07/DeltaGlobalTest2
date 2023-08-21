@@ -11,21 +11,23 @@ import {
 
    import buttonEditLight from "../../../Assets/Button/buttonEdit.svg"
    import buttonDeleteLight from "../../../Assets/Button/buttonDelete.svg"
-    //import buttonEditDark from "../../Assets/Button/buttonEditDark.svg"
-    //import buttonDeleteDark from "../../Assets/Button/buttonDeleteDark.svg"
+    import buttonEditDark from "../../../Assets/Button/buttonEditDark.svg"
+    import buttonDeleteDark from "../../../Assets/Button/buttonDeleteDark.svg"
 
-const CardTask = ({task, removeTask, completeTask}) => {
+const CardTask = ({task, editTask, deleteTask, completeTask, }) => {
+
+  
   return (
     
-        <TasksToDoCard >
-        <ButtonCheck onClick={() => completeTask(task.id)} />
-        <TaskContainer>
-            <TittleTask>{task.tittle}</TittleTask>
-            <DescriptionTask>{task.description}</DescriptionTask>
-        </TaskContainer>
-        <ButtonHandleTask onClick={() => {}} src={buttonEditLight}/>
-        <ButtonHandleTask onClick={() => removeTask(task.id)} src={buttonDeleteLight}/>
-        </TasksToDoCard>
+    <TasksToDoCard >
+    <ButtonCheck onClick={() => completeTask(task)} />
+    <TaskContainer>
+        <TittleTask>{task.tittle}</TittleTask>
+        <DescriptionTask>{task.description}</DescriptionTask>
+    </TaskContainer>
+    <ButtonHandleTask onClick={() => editTask(task.id)} src={task === 'light' ? buttonEditLight : buttonEditDark}/>
+    <ButtonHandleTask onClick={() => deleteTask(task.id)} src={task === 'light' ? buttonDeleteLight : buttonDeleteDark}/>
+    </TasksToDoCard>
     
   )
 }

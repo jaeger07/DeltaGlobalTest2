@@ -19,6 +19,7 @@ export const Card = styled.div`
     color: #2D9CDB;
     text-align: center;
     font-size: 32px;
+    line-height: 46px;
   }
   span{
     color: ${props => props.theme.colors.textPCount};
