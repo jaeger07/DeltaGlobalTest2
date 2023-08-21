@@ -20,6 +20,7 @@ export const TasksToDo = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 150px;
     margin-top: 35px;
 `;
 export const TittleTasksToDo = styled.h1`
