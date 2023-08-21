@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import Scores from "./Scores";
+<<<<<<< HEAD
 import Modal from './Modal';
 import CardTask from './CardTask';
+=======
+import {MyTasks} from './MyTasks';
+>>>>>>> 51c0776d5eb70bfde074231535cc0a2c746d7d50
 
 import {  
     Container,
