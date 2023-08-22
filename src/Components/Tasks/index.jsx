@@ -89,15 +89,21 @@ import {
           )
         }
       
-        deleteTask = (id) => {
+        deleteTask = (e) => {
+          e.preventDefault();
+          const id = this.state.id;
+
+          if(this.state.id !== 0){
             fetch("https://json-server-theta-ruby.vercel.app/tasks/"+id, { method: 'DELETE'})
             .then(res => {
                 if(res){
                     this.reloadTasks();
+                    this.fecharModalDelete();
                 }
             }
             )
         }
+      }
         editMyTasks = (id) => {
             fetch("https://json-server-theta-ruby.vercel.app/tasks/"+id, { method: 'GET'})
             .then(res => res.json())
