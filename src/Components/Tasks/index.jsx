@@ -148,7 +148,7 @@ import {
             id: 0,
             tittle: "",
             description: "",
-            modal: false
+            modalAberta: false
           })
         }
         fecharModalEdit = () => {
