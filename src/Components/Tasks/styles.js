@@ -83,7 +83,6 @@ export const ButtonAddTask = styled.button`
     align-items: center;
     background-color: ${props => props.theme.colors.bgButtonBlue};
     padding: 16px 24px;
-    max-width: 200px;
     margin-left: calc(100% - 200px);
     border-radius: 8px;
     color: ${props => props.theme.colors.textButtonBlue};
@@ -98,6 +97,7 @@ export const IconPlus = styled.img`
     justify-content: center;
     height: 20px;
     width: 20px;
+    margin-right: 10px;
 `;
 
 

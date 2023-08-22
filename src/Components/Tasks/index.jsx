@@ -67,7 +67,7 @@ import {
           }).then((res) => {
             if(res){
               this.reloadTasks();
-              this.fecharModal();
+              this.closeModal();
             } else {
               alert(JSON.stringify(res));
             }
@@ -81,7 +81,7 @@ import {
           }).then((res) => {
               if(res){
                   this.reloadTasks();
-                  this.fecharModal();
+                  this.closeModal();
               }else{
                 alert(JSON.stringify(res));
               }
@@ -98,7 +98,7 @@ import {
             .then(res => {
                 if(res){
                     this.reloadTasks();
-                    this.fecharModalDelete();
+                    this.closeModal();
                 }
             }
             )
@@ -126,13 +126,13 @@ import {
           });
         }
       
-        abrirModalInserir = () => {
+        openModalCreate = () => {
           this.setState({
             modalAberta: true
           })
         }
         
-        abrirModalAtualizar = (id) => {
+        openModalEdit = (id) => {
           this.setState({
             id: id,
             modalEdit: true
@@ -149,27 +149,13 @@ import {
           this.loadTask(id);
         }
         
-        fecharModal = () => {
+        closeModal = () => {
           this.setState({
             id: 0,
             tittle: "",
             description: "",
-            modalAberta: false
-          })
-        }
-        fecharModalEdit = () => {
-          this.setState({
-            id: 0,
-            tittle: "",
-            description: "",
-            modalEdit: false
-          })
-        }
-        fecharModalDelete = () => {
-          this.setState({
-            id: 0,
-            tittle: "",
-            description: "",
+            modalAberta: false,
+            modalEdit: false,
             modalDelete: false
           })
         }
@@ -210,7 +196,7 @@ import {
             tittleModal="Cadastrar Tarefa"
             textButton="Adicionar tarefa"
             submitTask={this.submitTask} 
-            fecharModal={this.fecharModal}
+            closeModal={this.closeModal}
             tittle={this.state.tittle}
             setTittle={this.updateSetStateTittle}
             description={this.state.description}
@@ -223,7 +209,7 @@ import {
           tittleModal="Editar Tarefa"
           textButton="Salvar"
           submitTask={this.submitTask} 
-          fecharModal={this.fecharModalEdit}
+          closeModal={this.closeModal}
           tittle={this.state.tittle}
           setTittle={this.updateSetStateTittle}
           description={this.state.description}
@@ -237,7 +223,7 @@ import {
       return (
         <ModalDelete
         deleteTask={this.deleteTask}
-        fecharModal={this.fecharModalDelete}
+        closeModal={this.closeModal}
         />);
     }
   }
@@ -249,8 +235,11 @@ render(){
             <Scores tasks={this.state.tasks}/>
             <ContainerTasks>
 
-                <ButtonAddTask onClick={this.abrirModalInserir}>
-                <IconPlus src={plus}/> Adicionar Tarefa
+                <ButtonAddTask onClick={this.openModalCreate}>
+                <IconPlus src={plus}/>
+                <p>
+                Adicionar&nbsp;Tarefa
+                </p>
                 </ButtonAddTask>
 
                 <TasksToDo>
@@ -260,7 +249,7 @@ render(){
                         <CardTask 
                         key={task.id} 
                         task={task} 
-                        editTask={this.abrirModalAtualizar} 
+                        editTask={this.openModalEdit} 
                         deleteTask={this.openModalDelete}
                         completeTask={this.completeTask}
                         />
@@ -275,7 +264,7 @@ render(){
                     <CardTaskComplete 
                     key={task.id}  
                     task={task} 
-                    editTask={this.abrirModalAtualizar} 
+                    editTask={this.openModalEdit} 
                     deleteTask={this.openModalDelete}
                     completeTask={this.completeTask}
                     />

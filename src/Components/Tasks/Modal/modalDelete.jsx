@@ -18,14 +18,14 @@ import {
    import buttonClose from "../../../Assets/Button/buttonClose.svg"
    import iconDelete from "../../../Assets/Button/buttonDeleteDark.svg"
 
-const ModalDelete = ({ fecharModal , deleteTask }) => {
+const ModalDelete = ({ closeModal , deleteTask }) => {
   
   return (
     
     <ModalContainer>
             <ModalForm onSubmit={deleteTask} >
               
-              <ModalButtonClose src={buttonClose} onClick={fecharModal}/>
+              <ModalButtonClose src={buttonClose} onClick={closeModal}/>
               <ModalFormContainer>
                 <ModalTittle>Excluir Tarefa</ModalTittle>
 
@@ -35,7 +35,7 @@ const ModalDelete = ({ fecharModal , deleteTask }) => {
       
                 <ModalContainerButton>
                   <ModalButtonCancel
-                      onClick={fecharModal}>Cancelar
+                      onClick={closeModal}>Cancelar
                   </ModalButtonCancel>
       
                   <ButtonDeleteTask  type="submit" >
@@ -44,7 +44,7 @@ const ModalDelete = ({ fecharModal , deleteTask }) => {
                 </ModalContainerButton>
               </ModalFormContainer>
             </ModalForm>
-            <ModalExit onClick={fecharModal}/>
+            <ModalExit onClick={closeModal}/>
       
           </ModalContainer>
           
