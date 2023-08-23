@@ -28,6 +28,7 @@ export const ModalForm = styled.form`
     flex-direction: column;
     z-index: 2;
     width: 500px;
+    max-width: 90vw;
     background-color: ${props => props.theme.colors.bgModal};
     border-radius: 8px;
 `;

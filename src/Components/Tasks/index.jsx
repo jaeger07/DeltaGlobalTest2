@@ -193,8 +193,8 @@ import {
         if(this.state.modalAberta){
           return (
             <Modal 
-            tittleModal="Cadastrar Tarefa"
-            textButton="Adicionar tarefa"
+            tittleModal="Cadastrar&nbsp;Tarefa"
+            textButton="Adicionar&nbsp;tarefa"
             submitTask={this.submitTask} 
             closeModal={this.closeModal}
             tittle={this.state.tittle}
@@ -206,7 +206,7 @@ import {
         if(this.state.modalEdit){
           return (
           <Modal 
-          tittleModal="Editar Tarefa"
+          tittleModal="Editar&nbsp;Tarefa"
           textButton="Salvar"
           submitTask={this.submitTask} 
           closeModal={this.closeModal}
