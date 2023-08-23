@@ -100,6 +100,11 @@ export const ModalContainerButton = styled.div`
     display: flex;
     justify-content: space-between;
     margin-bottom: 45px;
+    @media(max-width: 420px) {
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        
+    }
 `;
 
 export const ButtonAddTask = styled.button`
